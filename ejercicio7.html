@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container-login">
+    <div class="flex flex-colum">
+        <div class="flex flex-colum" style="width: 300px;">
+            <h1 style="text-align: center;">Iniciar sesion</h1>
+            <div>
+                <label class="w-full">Ingrese su edad</label>
+                <input class="w-full" id="edad" type="text"/>
+            </div>
+            <button class="mt-2 w-full" id="calcular">Calcular precio</button>
+        </div>
+        
+        <h1 id="info"></h1>
+    </div>
+    <script>
+        let edad = document.getElementById("edad")
+        let calcularButton = document.getElementById("calcular")
+        let info = document.getElementById("info")
+        let value = parseInt(edad)
+
+        calcularButton.addEventListener("click", (event) => {
+            info.innerHTML = (value < 12) ? 5 : value >
+        });
+    </script>
+</body>
+</html>

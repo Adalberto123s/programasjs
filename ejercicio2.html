@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparadores de igualdad</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container">
+    <div class="flex flex-colum">
+        <label>Numero 1</label>
+        <input id="numeroUno" type="number"/>
+        <label>Numero 2</label>
+        <input id="numeroDos" type="number"/>
+        <button class="mt-2" id="validarButton">Validar numero</button>
+    </div>
+    
+    <label></label><h1 id="mayor"></h1>
+    <label></label><h1 id="menor"></h1>
+    <label></label><h1 id="igual"></h1>
+    <label></label><h1 id="diferente"></h1>
+    <script>
+        let numeroUnoInput = document.getElementById("numeroUno")
+        let numeroDosInput = document.getElementById("numeroDos")
+        let mayor = document.getElementById("mayor")
+        let menor = document.getElementById("menor")
+        let igual = document.getElementById("igual")
+        let diferente = document.getElementById("diferente")
+        let validarButton = document.getElementById("validarButton")
+
+        validarButton.addEventListener("click", (event) => {
+            const value1 = numeroUnoInput.value
+            const value2 = numeroDosInput.value
+            mayor.innerHTML = value1 + " > " + value2 + " " + ((value1 > +value2)? "✅" : "❌")
+            menor.innerHTML = value1 + " < " + value2 + " " + ((+value1 < +value2)? "✅" : "❌")
+            igual.innerHTML = value1 + " === " + value2 + " " + ((+value1 === +value2)? "✅" : "❌")
+            diferente.innerHTML = value1 + " !== " + value2 + " " + ((+value1 != +value2)? "✅" : "❌")
+        });
+    </script>
+</body>
+</html>

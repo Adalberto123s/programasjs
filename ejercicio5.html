@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="flex flex-colum">
+        <div class="flex flex-colum">
+            <label>Nombre</label>
+            <input id="nombre" type="text"/>
+            <label>Edad</label>
+            <input id="edad" type="text"/>
+            <label>Es estudiante</label>
+             <input type="radio" value="0" name="isEstudiante" id="esEstudiante">
+             <input type="radio" value="1" name="isEstudiante" id="noEstudiante">
+            <button class="mt-2" id="operar">Imprimir</button>
+        </div>
+        
+        <h1 id="info"></h1>
+    </div>
+    <script>
+        let nombre = document.getElementById("nombre")
+        let edad = document.getElementById("edad")
+        let esEstudiante = document.getElementsByName("isEstudiante")
+        let operarButton = document.getElementById("operar")
+        let info = document.getElementById("info")
+        const radios = document.getElementsByName('gender');
+
+
+        operarButton.addEventListener("click", (event) => {
+            let isEstudiante = false
+            for (var i = 0; i < esEstudiante.length; i++) {
+                if (esEstudiante[i].checked) {
+                    isEstudiante = esEstudiante[i].value
+                    break;
+                }
+            }
+            let mensaje = isEstudiante == 0? " es estudiante" : " no es estudiante"
+            info.innerHTML = "Su nombre es " + nombre.value + ", tiene " + edad.value + " años y usted " + mensaje
+        });
+    </script>
+</body>
+</html>

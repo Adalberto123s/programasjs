@@ -1,0 +1,39 @@
+.flex {
+    display: flex;
+}
+
+.jus-center {
+    justify-content: center;
+}
+
+.flex-colum {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mt-2{
+    margin-top: 1rem;
+}
+
+.container {
+    margin: 20px;
+    width: 100%;
+    min-width: 100px;
+}
+
+.container-login {
+    margin: 20px;
+    width: 100%;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

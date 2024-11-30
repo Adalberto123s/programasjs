@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">    
+</head>
+<body>
+    <div class="flex flex-colum">
+        <div class="flex flex-colum">
+            <label class="w-full">Numero 1</label>
+            <input class="w-full" id="numeroUno" type="number"/>
+            <label class="w-full">Numero 2</label>
+            <input class="w-full" id="numeroDos" type="number"/>
+            <button class="mt-2" id="operar">Realizaroperacion</button>
+        </div>
+        
+        <h1 id="mas"></h1>
+        <h1 id="menos"></h1>
+        <h1 id="por"></h1>
+        <h1 id="entre"></h1>
+    </div>
+    <script>
+        let numeroUnoInput = document.getElementById("numeroUno")
+        let numeroDosInput = document.getElementById("numeroDos")
+        let mas = document.getElementById("mas")
+        let menos = document.getElementById("menos")
+        let por = document.getElementById("por")
+        let entre = document.getElementById("entre")
+        let operarButton = document.getElementById("operar")
+
+        operarButton.addEventListener("click", (event) => {
+            const value1 = numeroUnoInput.value
+            const value2 = numeroDosInput.value
+            mas.innerHTML = value1 + " + " + value2 + " =  " + (+value1 + +value2)
+            menos.innerHTML = value1 + " - " + value2 + " =  " + (+value1 - +value2)
+            por.innerHTML = value1 + " * " + value2 + " =  " + (value1 * value2)
+            entre.innerHTML = (value2 == 0) ? "No se puede dividir entre 0" : value1 + " / " + value2 + " =  " + (value1 - value2)
+        });
+    </script>
+</body>
+</html>

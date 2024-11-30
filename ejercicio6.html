@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container-login">
+    <div class="flex flex-colum">
+        <div class="flex flex-colum" style="width: 300px;">
+            <h1 style="text-align: center;">Iniciar sesion</h1>
+            <div>
+                <label class="w-full">Nombre de usuario</label>
+                <input class="w-full" id="nombreUsuario" type="text"/>
+            </div>
+            <div>
+                <label class="w-full">Contraseña</label>
+                <input  class="w-full" id="contrasena" type="password"/>
+            </div>
+            <button class="mt-2 w-full" id="operarButton">Inicar sesion</button>
+        </div>
+        
+        <h1 id="info"></h1>
+    </div>
+    <script>
+        let admin  = "administrador"
+        let contrasena  = "12345678"
+        let nombreUsuarioInput = document.getElementById("nombreUsuario")
+        let contrasenaInput = document.getElementById("contrasena")
+        let operarButton = document.getElementById("operarButton")
+        let info = document.getElementById("info")
+
+
+        operarButton.addEventListener("click", (event) => {
+            if(nombreUsuarioInput.value == admin && contrasenaInput.value == contrasena) {
+                info.innerHTML = "Acceso concedido"
+                info.style.color  = "blue"
+                info.style.fontWeight  = "100"
+            } else {
+                info.innerHTML = "Acceso no concedido"
+                info.style.color  = "red"
+                info.style.fontWeight  = "bold"
+            }
+        });
+    </script>
+</body>
+</html>
