@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cartoon-input {
+            width: 300px;
+            padding: 10px 15px;
+            font-size: 18px;
+            border: 4px solid #ffcc00;
+            border-radius: 25px;
+            outline: none;
+            background-color: #fffbe6;
+            box-shadow: 4px 4px 0px #ffa500;
+            transition: all 0.3s ease;
+        }
+
+        .cartoon-input:focus {
+            border-color: #ff6f61;
+            box-shadow: 6px 6px 0px #ff4500;
+            transform: scale(1.05);
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        .cartoon-button {
+            background-color: #ffcc00;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            border: 4px solid #ffa500;
+            border-radius: 25px;
+            padding: 10px 30px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #d46a00;
+            transition: all 0.3s ease;
+            margin-left: 20PX;
+        }
+
+        .cartoon-button:hover {
+            background-color: #ffa500;
+            box-shadow: 6px 6px 0px #ff6f61;
+            transform: translateY(-3px);
+        }
+
+        .cartoon-button:active {
+            background-color: #ff6f61;
+            box-shadow: 3px 3px 0px #d46a00;
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    
+    <input class="cartoon-input" id="numero" type="text" placeholder="Ingrese un número"/>
+    <button class="cartoon-button" id="adivinar" type="button">Adivinar</button>
+    <h1 id="info" type="button">Adivinar</h1>
+    <script>
+        let adivinado = false
+        let numeroIntentos = 0
+        let numero = document.getElementById("numero")
+        let adivinar = document.getElementById("adivinar")
+        let info = document.getElementById("info")
+        const numeroGenerado = Math.floor(Math.random() * 10) + 1;
+        adivinar.addEventListener("click", (event) => {
+           if(+numero.value != numeroGenerado) {
+            numeroIntentos ++
+            info.innerHTML= "Numero no encontrado, intento #" + numeroIntentos
+           } else {
+            numeroIntentos ++
+            info.innerHTML= "Numero encontrado en el itento " + numeroIntentos
+            numero.style.display = "none"
+            adivinar.style.display = "none"
+           }
+        });
+    </script>
+</body>
+</html>
